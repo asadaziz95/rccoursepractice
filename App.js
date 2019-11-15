@@ -48,12 +48,11 @@ const ListView = () => {
       data={friends}
       keyExtractor={friends => friends.name}
       renderItem={({item}) => {
-        return( 
-        <Text style={styles.textStyle}>
-          {item.name}</Text>;
-            <Text>
-            {item.age}</Text>;
-        )
+        return (
+          <Text style={styles.textStyle}>
+            {'Name :' + item.name + 'Age :' + item.age}
+          </Text>
+        );
       }}
     />
   );
@@ -69,9 +68,9 @@ const App: () => React$Node = () => {
 };
 
 const styles = StyleSheet.create({
-  textStyle:{
-    marginVertical:50,
-  }
+  textStyle: {
+    marginVertical: 50,
+  },
 });
 
 export default App;
