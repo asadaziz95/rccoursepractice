@@ -14,6 +14,7 @@ import {
   View,
   Text,
   StatusBar,
+  FlatList,
 } from 'react-native';
 
 import {
@@ -24,91 +25,53 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+//import ListView from './src/components/ListView/index.js';
+
+const ListView = () => {
+  const friends = [
+    {name: 'Friend #1', age: '23'},
+    {name: 'Friend #2', age: '21'},
+    {name: 'Friend #3', age: '19'},
+    {name: 'Friend #4', age: '21'},
+    {name: 'Friend #5', age: '22'},
+    {name: 'Friend #6', age: '23'},
+    {name: 'Friend #7', age: '24'},
+    {name: 'Friend #8', age: '25'},
+    {name: 'Friend #9', age: '26'},
+    {name: 'Friend #10', age: '27'},
+    {name: 'Friend #11', age: '28'},
+  ];
+  return (
+    <FlatList
+      // horizontal
+      // showsHorizontalScrollIndicator={false}
+      data={friends}
+      keyExtractor={friends => friends.name}
+      renderItem={({item}) => {
+        return( 
+        <Text style={styles.textStyle}>
+          {item.name}</Text>;
+            <Text>
+            {item.age}</Text>;
+        )
+      }}
+    />
+  );
+};
+
 const App: () => React$Node = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
+      <ListView />
     </>
   );
 };
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
+  textStyle:{
+    marginVertical:50,
+  }
 });
 
 export default App;
