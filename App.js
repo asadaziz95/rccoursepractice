@@ -8,14 +8,11 @@ import {
   StatusBar,
 } from 'react-native';
 import {CreateAppContainer} from 'react-navigation';
-import 
+import {createStackNavigator} from 'react-navigation-stack';
+import Router from './src/router/index.js';
 
 const App: () => React$Node = () => {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-    </>
-  );
+  return <Router />;
 };
 
 const styles = StyleSheet.create({

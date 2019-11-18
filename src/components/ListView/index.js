@@ -1,2 +1,2 @@
-import ListView from './ListView.jsx';
+import ListView from './ListView.js';
 export default ListView;
