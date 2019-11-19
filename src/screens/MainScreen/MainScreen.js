@@ -18,6 +18,10 @@ const MainScreen = props => {
         onPress={() => navigation.navigate('ColorScreen')}
         title="Visit Color App"
       />
+      <Button
+        onPress={() => navigation.navigate('SquareScreen')}
+        title="Visit Square  App"
+      />
     </View>
   );
 };
