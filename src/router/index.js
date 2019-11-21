@@ -7,6 +7,7 @@ import CounterScreen from './../screens/CounterScreen/CounterScreen.js';
 import ColorScreen from './../screens/ColorScreen/ColorScreen.js';
 import SquareScreen from '../screens/SquareScreen/SquareScreen.js';
 import TextScreen from '../screens/TextScreen/TextScreen.js';
+import BoxModelScreen from '../screens/BoxModelScreen/BoxModelScreen.js';
 
 const AppNavigator = createStackNavigator(
   {
@@ -16,7 +17,8 @@ const AppNavigator = createStackNavigator(
     CounterScreen: CounterScreen,
     ColorScreen: ColorScreen,
     SquareScreen: SquareScreen,
-    TextScreen,TextScreen,
+    TextScreen: TextScreen,
+    BoxModelScreen: BoxModelScreen,
   },
   {
     initialRouteName: 'MainScreen',
