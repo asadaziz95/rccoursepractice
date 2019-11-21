@@ -22,6 +22,11 @@ const MainScreen = props => {
         onPress={() => navigation.navigate('SquareScreen')}
         title="Visit Square  App"
       />
+       <Button
+        onPress={() => navigation.navigate('TextScreen')}
+        title="Visit Square  Text Screen"
+      />
+      
     </View>
   );
 };
